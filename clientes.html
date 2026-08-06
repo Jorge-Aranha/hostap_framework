@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neoenergia Embargos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/clientes.css') }}">
+</head>
+
+<body>
+
+    <div class="sidebar" id="sidebar">
+
+        <button class="toggle-btn" onclick="toggleMenu()">
+            <img src="{{ url_for('static', filename= 'mage/guia.png') }}"></img>
+        </button>
+
+        <h2>EMB</h2>
+
+        <a href="{{ url_for('home.home') }}">Home</a>
+        <br>
+        <a href="{{ url_for('work.work') }}">Work</a>
+
+    </div>
+
+
+    <h1>Pendências Cliente - Análise</h1>
+
+    <div class="filtros">
+
+        <div class="pesquisa">
+            <input
+                type="text"
+                id="pesquisaNota"
+                placeholder="Digite a Nota"
+                onkeyup="filtrarNotas()">
+
+                <button type="submit">
+                    <img src="{{ url_for('static', filename= 'mage/busca.png') }}"></img>
+                </button>
+
+            </input>
+        </div>
+
+
+         <div class="contador">
+            Total: <strong>{{ clientes|length }}</strong>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <h2>Lista de Notas</h2>
+
+        <table id="tabelaNotas">
+            <thead>
+                <tr>
+                    <th>Nota</th>
+                    <th>Ordem Medida</th>
+                    <th>ID Medida</th>
+                    <th>Motivo</th>
+                    <th>Criação Medida</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+
+                <tbody>
+                    {% for tb in clientes %}
+                        <tr>
+                            <td>{{ tb[0] }}</td>
+                            <td>{{ tb[1] }}</td>
+                            <td>{{ tb[2] }}</td>
+                            <td>{{ tb[3] }}</td>
+                            <td>{{ tb[4] }}</td>
+
+                            <td>
+                                <button
+                                    class="btn-tratar"
+                                    onclick="abrirModal(
+                                        '{{ tb[0] }}',
+                                        '{{ tb[1] }}',
+                                        '{{ tb[2] }}',
+                                        '{{ tb[3] }}',
+                                        '{{ tb[4] }}'
+                                    )">
+                                    Tratar
+                                </button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+        </table>
+
+    </div>
+
+    <div id="modal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close" onclick="fecharModal()">&times;</span>
+
+            <h2>Tratamento de Nota</h2>
+
+            <p><strong>Nota:</strong> <span id="mNota"></span></p>
+            <p><strong>Ordem:</strong> <span id="mOrdem"></span></p>
+            <p><strong>ID Medida:</strong> <span id="mMedida"></span></p>
+            <p><strong>Motivo:</strong> <span id="mMotivo"></span></p>
+
+            <input type="hidden" id="nota_hidden">
+            <input type="hidden" id="ordem_hidden">
+
+            <label>Regularizado</label>
+
+            <select id="regularizado" onchange="atualizarAcao()">
+                <option value="SIM">SIM</option>
+                <option value="NAO">NAO</option>
+            </select>
+
+            <label>Ação</label>
+
+            <select id="acao" disabled>
+                <option value="FECHAR MEDIDA">FECHAR MEDIDA</option>
+                <option value="CANCELAR">CANCELAR</option>
+            </select>
+
+            <label>Observação</label disabled>
+
+            <textarea
+                id="observacao"
+                rows="4"
+                placeholder="Digite a observação"></textarea>
+
+            <button onclick="salvarTratativa()">
+                Salvar
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="mensagem" class="msg"></div>
+    <div class="main-content"></div>
+
+    <script src="{{ url_for('static', filename='js/cliente.js') }}"> </script>
+
+</body>
+
+</html>

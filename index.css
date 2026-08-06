@@ -1,0 +1,100 @@
+body{
+background-color: #f4f6f8;
+font-family: 'Segoe UI', Arial, sans-serif;
+margin: 0;
+}
+
+.header{
+background: linear-gradient(135deg, #00843D, #00A651);
+color: white;
+text-align: center;
+padding: 60px 20px;
+position: relative;
+box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.header h1{
+font-size: 42px;
+margin-bottom: 10px;
+}
+
+.header h2{
+margin: 5px 0;
+font-weight: 500;
+}
+
+.header h3{
+margin-bottom: 25px;
+}
+
+.header p{
+max-width: 900px;
+margin: auto;
+line-height: 1.8;
+font-size: 17px;
+}
+
+.logo{
+position: absolute;
+top: 20px;
+left: 20px;
+width: 160px;
+height: auto;
+}
+
+.container{
+display: flex;
+justify-content: center;
+gap: 40px;
+padding: 50px 20px;
+flex-wrap: wrap;
+}
+
+.card{
+width: 340px;
+background: #fff;
+border-radius: 15px;
+padding: 30px;
+text-align: center;
+box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+transition: all 0.3s ease;
+border-top: 5px solid #00843D;
+}
+
+.card:hover{
+transform: translateY(-8px);
+box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+.card h2{
+color: #00843D;
+font-size: 30px;
+margin-bottom: 15px;
+}
+
+.card p{
+color: #555;
+line-height: 1.6;
+min-height: 70px;
+}
+
+button{
+background: #00843D;
+color: white;
+border: none;
+padding: 12px 28px;
+border-radius: 8px;
+cursor: pointer;
+font-size: 15px;
+font-weight: bold;
+transition: all 0.3s ease;
+}
+
+button:hover{
+background: #006B32;
+transform: scale(1.05);
+}
+
+a{
+text-decoration: none;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neoenergia Embargos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"></link>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>Neoenergia Embargos</h1>
+        <h2>Unidade Projetos de Obras</h2>
+
+        <p>
+            Bem-vindo (a) ao novo módulo de Embargos, este Website tem como função
+            auxiliar ações de Regularização a motivo de Pendência Cliente.
+        </p>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Pendência Cliente</h2>
+
+            <p>
+                Ambiente destinado ao tratamento e análise das pendências
+                de clientes.
+            </p>
+
+            <a href="{{ url_for('cliente.clientes') }}">
+            <button>
+                Acessar
+            </button>
+            </a>
+
+        </div>
+
+        <div class="card">
+            <h2>Work</h2>
+
+            <p>
+                Ambiente destinado a novos desenvolvimentos e testes
+                operacionais.
+            </p>
+
+            <a href="{{ url_for('work.work') }}">
+                <button>
+                    Acessar
+                </button>
+            </a>
+
+    </div>
+
+</body>
+
+</html>
