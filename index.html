@@ -1,161 +1,60 @@
-<html>
-<body style="
-    margin:0;
-    padding:0;
-    background-color:#f5f5f5;
-    font-family:Segoe UI, Arial, sans-serif;
-">
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-    <table width="100%" cellpadding="0" cellspacing="0">
-        <tr>
-            <td align="center">
+<head>
 
-                <table width="650" cellpadding="0" cellspacing="0"
-                    style="
-                        background:#ffffff;
-                        margin-top:20px;
-                        padding:30px;
-                        border-radius:8px;
-                    "
-                >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neoenergia Embargos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}"></link>
+</head>
 
-                    <tr>
-                        <td>
+<body>
 
-                            <table width="100%" cellpadding="0" cellspacing="0">
-                                <tr>
+    <div class="header">
+        <h1>Neoenergia Embargos</h1>
+        <h2>Unidade Projetos de Obras</h2>
 
-                                    <td align="left" valign="middle">
-                                        <h2 style="
-                                            color:#00A443;
-                                            font-weight:normal;
-                                            margin:0;
-                                        ">
-                                            Solicitações Embargo Prazo
-                                        </h2>
-                                    </td>
+        <p>
+            Bem-vindo (a) ao novo módulo de Embargos, este Website tem como função
+            auxiliar ações de Regularização a motivo de Pendência Cliente.
+        </p>
+    </div>
 
-                                    <td align="right" valign="middle">
-                                        <img src="cid:neo_logo" width="120" style="display:block;"></img>
-                                    </td>
+    <div class="container">
 
-                                </tr>
-                            </table>
+        <div class="card">
+            <h2>Pendência Cliente</h2>
 
-                            <br>
+            <p>
+                Ambiente destinado ao tratamento e análise das pendências
+                de clientes.
+            </p>
 
-                            <p>
-                                Prezado(a) <b>{{NOME_COMPLETO}}</b>,
-                            </p>
+            <a href="{{ url_for('cliente.clientes') }}">
+            <button>
+                Acessar
+            </button>
+            </a>
 
-                            <p>
-                                Foram identificadas solicitações de embargo que requerem acompanhamento, contendo registros com status <b>"A Vencer"</b> e <b>"Vencido"</b>, de acordo com os prazos definidos para regularização.
-                            </p>
+        </div>
 
-                            <br>
-<table
-    width="100%"
-    border="1"
-    cellpadding="8"
-    cellspacing="0"
-    style="
-        border-collapse:collapse;
-        border-color:#d9d9d9;
-        font-size:13px;
-        table-layout:auto;
-    "
->
+        <div class="card">
+            <h2>Work</h2>
 
-    <tr style="
-        background-color:#00A443;
-        color:white;
-        text-align:center;
-    ">
-        <th width="12%">Nota</th>
-        <th width="8%">Ordem</th>
-        <th width="35%">Motivo</th>
-        <th width="15%">Data Criação</th>
-        <th width="15%">Data Vencimento</th>
-        <th width="15%">Status</th>
-    </tr>
+            <p>
+                Ambiente destinado a novos desenvolvimentos e testes
+                operacionais.
+            </p>
 
+            <a href="{{ url_for('work.work') }}">
+                <button>
+                    Acessar
+                </button>
+            </a>
 
-    <tr>
-        <td align="center">{{NOTA}}</td>
-        <td align="center">{{ORDEM}}</td>
-        <td align="center">{{MOTIVO}}</td>
-        <td align="center">{{CRIADA_EM}}</td>
-        <td align="center">{{DT_VENCIMENTO}}</td>
-        <td align="center">{{PRAZO}}</td>
-    </tr>
+    </div>
 
-</table>
-
-                            <br>
-
-                            <p>
-                                Favor avaliar e providenciar as ações necessárias.
-                            </p>
-
-                            <br>
-
-                            <p>
-                                Atenciosamente,
-                            </p>
-
-                            <div style="height:20px;"></div>
-
-                            <table width="100%" cellpadding="0" cellspacing="0">
-                                <tr>
-
-                                    <td align="left" valign="bottom">
-                                        <b>Núcleo Embargos</b><br>
-                                        Unidade Projetos de Obras
-                                    </td>
-
-                                    <td align="right" valign="middle">
-
-                                        <a
-                                            href="http://hor5gsn034.amer.iberdrola.local:1241/projetos/embargos/solicitacoes"
-                                            target="_blank"
-                                            style="
-                                                background-color:#00A443;
-                                                color:#ffffff;
-                                                padding:12px 24px;
-                                                border-radius:6px;
-                                                text-decoration:none;
-                                                font-weight:bold;
-                                                font-size:13px;
-                                                display:inline-block;
-                                            "
-                                        >
-                                            Acessar
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-                            </table>
-
-                        </td>
-                    </tr>
-
-                </table>
-
-                <br>
-
-                <div style="
-                    color:#999999;
-                    font-size:12px;
-                ">
-                    Mensagem gerada automaticamente. Favor não responder.
-                    <br>
-                    Obras App - Superintendência de Expansão e Preservação
-                </div>
-
-            </td>
-        </tr>
-    </table>
-    <br>
 </body>
+
 </html>
