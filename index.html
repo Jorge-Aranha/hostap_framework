@@ -10,7 +10,7 @@
         <tr>
             <td align="center">
 
-                <table width="980" cellpadding="0" cellspacing="0"
+                <table width="650" cellpadding="0" cellspacing="0"
                     style="
                         background:#ffffff;
                         margin-top:20px;
@@ -31,7 +31,7 @@
                                             font-weight:normal;
                                             margin:0;
                                         ">
-                                            Embargo Tipo Cliente
+                                            Solicitações Embargo Prazo
                                         </h2>
                                     </td>
 
@@ -49,49 +49,47 @@
                             </p>
 
                             <p>
-                                Foram identificadas <b>Pendências de Responsabilidade do Cliente</b> que requerem acompanhamento e regularização. Solicitamos a análise dos casos relacionados abaixo e a adoção das providências necessárias para a resolução das pendências identificadas.
-                            </p>
-
-                            <p>
-                                Conforme estabelecido pela <b>Resolução Normativa ANEEL nº 1.000/2021</b>, Seção XIII - Da Execução das Obras, Art. 89.
+                                Foram identificadas solicitações de embargo que requerem acompanhamento, contendo registros com status <b>"A Vencer"</b> e <b>"Vencido"</b>, de acordo com os prazos definidos para regularização.
                             </p>
 
                             <br>
-                            <table
-                                width="100%"
-                                border="1"
-                                cellpadding="8"
-                                cellspacing="0"
-                                style="
-                                    border-collapse:collapse;
-                                    border-color:#d9d9d9;
-                                    font-size:13px;
-                                    table-layout:auto;
-                                "
-                            >
-                                <tr style="
-                                    background-color:#00A443;
-                                    color:white;
-                                    text-align:center;
-                                ">
-                                    <!-- <th width="12%">Nota</th>
-                                    <th width="12%">Solicitante</th>
-                                    <th width="40%">Descrição</th>
-                                    <th width="15%">Motivo</th>
-                                    <th width="17%">Data Criação</th>
-                                    <th width="16%">Data Vencimento</th> -->
-                                    <th width="8%">Nota</th>
-                                    <th width="22%">Solicitante</th>
-                                    <th width="38%">Descrição</th>
-                                    <th width="12%">Motivo</th>
-                                    <th width="10%">Data Criação</th>
-                                    <th width="16%">Data Vencimento</th>
-                                </tr>
+<table
+    width="100%"
+    border="1"
+    cellpadding="8"
+    cellspacing="0"
+    style="
+        border-collapse:collapse;
+        border-color:#d9d9d9;
+        font-size:13px;
+        table-layout:auto;
+    "
+>
 
-                                {{LINHAS_TABELA}}
+    <tr style="
+        background-color:#00A443;
+        color:white;
+        text-align:center;
+    ">
+        <th width="12%">Nota</th>
+        <th width="8%">Ordem</th>
+        <th width="35%">Motivo</th>
+        <th width="15%">Data Criação</th>
+        <th width="15%">Data Vencimento</th>
+        <th width="15%">Status</th>
+    </tr>
 
-                            </table>
 
+    <tr>
+        <td align="center">{{NOTA}}</td>
+        <td align="center">{{ORDEM}}</td>
+        <td align="center">{{MOTIVO}}</td>
+        <td align="center">{{CRIADA_EM}}</td>
+        <td align="center">{{DT_VENCIMENTO}}</td>
+        <td align="center">{{PRAZO}}</td>
+    </tr>
+
+</table>
 
                             <br>
 
@@ -118,7 +116,7 @@
                                     <td align="right" valign="middle">
 
                                         <a
-                                            href="http://hor5gsn034.amer.iberdrola.local:1241/projetos/embargos"
+                                            href="http://hor5gsn034.amer.iberdrola.local:1241/projetos/embargos/solicitacoes"
                                             target="_blank"
                                             style="
                                                 background-color:#00A443;
