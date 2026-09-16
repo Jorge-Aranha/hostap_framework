@@ -12,8 +12,6 @@ import time
 TEMPORARIO = r"C:\Users\u620433\OneDrive - IBERDROLA S.A\EMBARGO_EMB_CLIENTE\EMB_CLIENTE_CANC\V_ENV\TEMPORARIO_CSV_TRIAGEM"
 END = r"C:\Users\u620433\OneDrive - IBERDROLA S.A\EMBARGO_EMB_CLIENTE\EMB_CLIENTE_CANC\G_ENV\END_CSV_TRIAGEM"
 
-executado = False
-
 def executar_processo():
     try:
         print("Iniciando processo")
@@ -83,23 +81,7 @@ def executar_processo():
 
     except Exception as e:
         print("ERRO:", e)
-def agendador():
-    global executado
 
-    while True:
-        agora = datetime.now()
-
-        if (
-            agora.weekday() == 0 and  #DIA - HORA - MINUTO - SEG
-            agora.hour == 4 and
-            agora.minute == 30 and
-            not executado
-        ):
-
-            executar_processo()
-            executado = True
-
-        time.sleep(20)
 if __name__ == "__main__":
-    print("Aguardando execucao")
-    agendador() 
+    # Domingo às 04:30hrs
+    executar_processo()

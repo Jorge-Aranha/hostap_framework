@@ -3,7 +3,7 @@ import zipfile
 from datetime import datetime
 
 PASTA_INPUT = r"C:\Users\u620433\Pictures\Screenshots"
-PASTA_OUTPUT = r"C:\Users\u620433\OneDrive - IBERDROLA S.A\EMBARGO_EMB_CLIENTE\EMB_CLIENTE_CANC\V_ENV\TEMPORARIO_ZIP"
+PASTA_OUTPUT = r"C:\Users\u620433\OneDrive - IBERDROLA S.A\EMBARGO_HOSTAP\EMB_PROCESSOS\EMB_CLIENTE\EMB_CLIENTE_CANC\TEMPORARIO_FIXO\TEMPORARIO_ZIP"
 
 def criar_zip(nota, ordem):
     os.makedirs(PASTA_OUTPUT, exist_ok=True)
@@ -16,7 +16,7 @@ def criar_zip(nota, ordem):
 
     arquivos = [
         f for f in os.listdir(PASTA_INPUT)
-        if f.lower().endswith((".png",".jpg",".jpeg",".txt",".pdf",".docx",".msg",".html"))
+        if f.lower().endswith((".png",".jpg",".jpeg",".txt",".pdf",".docx",".msg",".html",".eml"))
     ]
 
     if not arquivos:

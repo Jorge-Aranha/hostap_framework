@@ -99,7 +99,7 @@ def agendador():
         if (
             agora.weekday() == 0 and  #DIA - HORA - MINUTO - SEG
             agora.hour == 4 and
-            agora.minute == 30 and
+            agora.minute == 40 and # alterar e verificar
             not executado
         ):
 
